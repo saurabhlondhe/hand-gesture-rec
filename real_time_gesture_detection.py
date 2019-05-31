@@ -9,7 +9,7 @@ import pygame
 import time
 import thread as thrd
 
-import freenect
+#import freenect
 import numpy as np
 from functions import *
 
@@ -105,8 +105,8 @@ camera.set(10, 200)
 
 while camera.isOpened():
     # ret, frame = camera.read()
-    orig = freenect.sync_get_video()[0]
-    frame = cv2.cvtColor(orig,cv2.COLOR_BGR2RGB)
+    #orig = freenect.sync_get_video()[0]
+    #frame = cv2.cvtColor(orig,cv2.COLOR_BGR2RGB)
     frame = cv2.bilateralFilter(frame, 5, 50, 100)  # smoothing filter
     frame = cv2.flip(frame, 1)  # flip the frame horizontally
     cv2.rectangle(frame, (int(cap_region_x_begin * frame.shape[1]), 0),
